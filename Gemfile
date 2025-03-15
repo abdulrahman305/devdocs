@@ -18,7 +18,7 @@ group :app do
   gem 'image_optim_pack', platforms: :ruby
   gem 'image_optim'
   gem 'rack-ssl-enforcer'
-  gem 'rack'
+  gem 'rack', '>= 2.2.13'
   gem 'rss'
   gem 'sass'
   gem 'sinatra-contrib'
