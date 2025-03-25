@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 ruby '3.3.5'
 
 gem 'activesupport', require: false
-gem 'html-pipeline'
-gem 'nokogiri'
+gem 'html-pipeline', '>= 3.0.0'
+gem 'nokogiri', '>= 1.18.4'
 gem 'pry-byebug'
 gem 'rake'
 gem 'terminal-table'
@@ -18,7 +18,7 @@ group :app do
   gem 'image_optim_pack', platforms: :ruby
   gem 'image_optim'
   gem 'rack-ssl-enforcer'
-  gem 'rack'
+  gem 'rack', '>= 2.2.13'
   gem 'rss'
   gem 'sass'
   gem 'sinatra-contrib'
