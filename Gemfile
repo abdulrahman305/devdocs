@@ -19,13 +19,13 @@ group :app do
   gem 'image_optim'
   gem 'rack-ssl-enforcer'
   gem 'rack'
-  gem 'rss'
+  gem 'rss', '>= 0.3.1'
   gem 'sass'
-  gem 'sinatra-contrib'
-  gem 'sinatra'
+  gem 'sinatra-contrib', '>= 4.0.0'
+  gem 'sinatra', '>= 4.0.0'
   gem 'sprockets-helpers'
   gem 'sprockets-sass'
-  gem 'sprockets'
+  gem 'sprockets', '>= 4.2.0'
   gem 'thin'
 end
 
@@ -47,7 +47,7 @@ end
 
 group :test do
   gem 'minitest'
-  gem 'rack-test', require: false
+  gem 'rack-test', '>= 2.2.0', require: false
   gem 'rr', require: false
 end
 
