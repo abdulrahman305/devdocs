@@ -3,11 +3,11 @@ ruby '3.3.5'
 
 gem 'activesupport', require: false
 gem 'html-pipeline'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.18.9'
 gem 'pry-byebug'
 gem 'rake'
 gem 'terminal-table'
-gem 'thor'
+gem 'thor', '>= 1.4.0'
 gem 'typhoeus'
 gem 'yajl-ruby', require: false
 
