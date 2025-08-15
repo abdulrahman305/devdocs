@@ -20,9 +20,33 @@ Keep track of development news:
 
 Unless you wish to contribute to the project, we recommend using the hosted version at [devdocs.io](https://devdocs.io). It's up-to-date and works offline out-of-the-box.
 
+### Using Docker (Recommended)
+
+The easiest way to run DevDocs locally is using Docker:
+
+```sh
+docker run --name devdocs -d -p 9292:9292 ghcr.io/freecodecamp/devdocs:latest
+```
+
+This will start DevDocs at [localhost:9292](http://localhost:9292). We provide both regular and Alpine-based images:
+- `ghcr.io/freecodecamp/devdocs:latest` - Standard image
+- `ghcr.io/freecodecamp/devdocs:latest-alpine` - Alpine-based (smaller size)
+
+Images are automatically built and updated monthly with the latest documentation.
+
+Alternatively, you can build the image yourself:
+
+```sh
+git clone https://github.com/freeCodeCamp/devdocs.git && cd devdocs
+docker build -t devdocs .
+docker run --name devdocs -d -p 9292:9292 devdocs
+```
+
+### Manual Installation
+
 DevDocs is made of two pieces: a Ruby scraper that generates the documentation and metadata, and a JavaScript app powered by a small Sinatra app.
 
-DevDocs requires Ruby 3.3.0 (defined in [`Gemfile`](./Gemfile)), libcurl, and a JavaScript runtime supported by [ExecJS](https://github.com/rails/execjs#readme) (included in OS X and Windows; [Node.js](https://nodejs.org/en/) on Linux). Once you have these installed, run the following commands:
+DevDocs requires Ruby 3.4.1 (defined in [`Gemfile`](./Gemfile)), libcurl, and a JavaScript runtime supported by [ExecJS](https://github.com/rails/execjs#readme) (included in OS X and Windows; [Node.js](https://nodejs.org/en/) on Linux). Once you have these installed, run the following commands:
 
 ```sh
 git clone https://github.com/freeCodeCamp/devdocs.git && cd devdocs
@@ -37,17 +61,6 @@ Finally, point your browser at [localhost:9292](http://localhost:9292) (the firs
 The `thor docs:download` command is used to download pre-generated documentations from DevDocs's servers (e.g. `thor docs:download html css`). You can see the list of available documentations and versions by running `thor docs:list`. To update all downloaded documentations, run `thor docs:download --installed`. To download and install all documentation this project has available, run `thor docs:download --all`.
 
 **Note:** there is currently no update mechanism other than `git pull origin main` to update the code and `thor docs:download --installed` to download the latest version of the docs. To stay informed about new releases, be sure to [watch](https://github.com/freeCodeCamp/devdocs/subscription) this repository.
-
-Alternatively, DevDocs may be started as a Docker container:
-
-```sh
-# First, build the image
-git clone https://github.com/freeCodeCamp/devdocs.git && cd devdocs
-docker build -t thibaut/devdocs .
-
-# Finally, start a DevDocs container (access http://localhost:9292)
-docker run --name devdocs -d -p 9292:9292 thibaut/devdocs
-```
 
 ## Vision
 
@@ -175,13 +188,14 @@ Made something cool? Feel free to open a PR to add a new row to this table! You 
 | [girishji/devdocs.vim](https://github.com/girishji/devdocs.vim)                               | Vim plugin & TUI (browse inside Vim)                           | ![Latest GitHub commit](https://img.shields.io/github/last-commit/girishji/devdocs.vim?logo=github&label)             | ![GitHub stars](https://img.shields.io/github/stars/girishji/devdocs.vim?logo=github&label)             |
 | [romainl/vim-devdocs](https://github.com/romainl/vim-devdocs)                               | Vim plugin                           | ![Latest GitHub commit](https://img.shields.io/github/last-commit/romainl/vim-devdocs?logo=github&label)             | ![GitHub stars](https://img.shields.io/github/stars/romainl/vim-devdocs?logo=github&label)             |
 | [waiting-for-dev/vim-www](https://github.com/waiting-for-dev/vim-www)                       | Vim plugin                           | ![Latest GitHub commit](https://img.shields.io/github/last-commit/waiting-for-dev/vim-www?logo=github&label)         | ![GitHub stars](https://img.shields.io/github/stars/waiting-for-dev/vim-www?logo=github&label)         |
-| [luckasRanarison/nvim-devdocs](https://github.com/luckasRanarison/nvim-devdocs)             | Neovim plugin                        | ![Latest GitHub commit](https://img.shields.io/github/last-commit/luckasRanarison/nvim-devdocs?logo=github&label)    | ![GitHub stars](https://img.shields.io/github/stars/luckasRanarison/nvim-devdocs?logo=github&label)    |
+| [emmanueltouzery/apidocs.nvim](https://github.com/emmanueltouzery/apidocs.nvim)             | Neovim plugin                        | ![Latest GitHub commit](https://img.shields.io/github/last-commit/emmanueltouzery/apidocs.nvim?logo=github&label)    | ![GitHub stars](https://img.shields.io/github/stars/emmanueltouzery/apidocs.nvim?logo=github&label)    |
 | [toiletbril/dedoc](https://github.com/toiletbril/dedoc)                                     | Terminal based viewer                | ![Latest GitHub commit](https://img.shields.io/github/last-commit/toiletbril/dedoc?logo=github&label)                | ![GitHub stars](https://img.shields.io/github/stars/toiletbril/dedoc?logo=github&label)                |
 | [Raycast Devdocs](https://www.raycast.com/djpowers/devdocs)                                 | Raycast extension                    | Unavailable                 | Unavailable                |
+| [chrisgrieser/alfred-docs-searches](https://github.com/chrisgrieser/alfred-docs-searches)   | Alfred workflow                      | ![Latest GitHub commit](https://img.shields.io/github/last-commit/chrisgrieser/alfred-docs-searches?logo=github&label) | ![GitHub stars](https://img.shields.io/github/stars/chrisgrieser/alfred-docs-searches?logo=github&label) |
 
 ## Copyright / License
 
-Copyright 2013–2024 Thibaut Courouble and [other contributors](https://github.com/freeCodeCamp/devdocs/graphs/contributors)
+Copyright 2013–2025 Thibaut Courouble and [other contributors](https://github.com/freeCodeCamp/devdocs/graphs/contributors)
 
 This software is licensed under the terms of the Mozilla Public License v2.0. See the [COPYRIGHT](./COPYRIGHT) and [LICENSE](./LICENSE) files.
 

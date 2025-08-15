@@ -2,7 +2,7 @@ module Docs
   class Crystal < UrlScraper
     include MultipleBaseUrls
     self.type = 'crystal'
-    self.release = '1.14.0'
+    self.release = '1.17.0'
     self.base_urls = [
       "https://crystal-lang.org/api/#{release}/",
       "https://crystal-lang.org/reference/#{release[0..2]}/",
@@ -20,7 +20,10 @@ module Docs
     html_filters.push 'crystal/entries', 'crystal/clean_html'
 
     options[:skip_patterns] = [
-      %r{\ACrystal/System/},
+      %r{\ALibLLVM\.html\z},
+      %r{\ACrystal/System(/|\.html\z)},
+      %r{\ACrystal/PointerPairingHeap/},
+      %r{\AFiber/ExecutionContext/Scheduler.html\z},
       %r{\AIO/Evented.html\z},
       %r{\ARegex/PCRE2.html\z}
     ]
@@ -34,7 +37,7 @@ module Docs
         HTML
       else
         <<-HTML
-          &copy; 2012&ndash;2024 Manas Technology Solutions.<br>
+          &copy; 2012&ndash;2025 Manas Technology Solutions.<br>
           Licensed under the Apache License, Version 2.0.
         HTML
       end
