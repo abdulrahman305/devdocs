@@ -18,15 +18,15 @@ group :app do
   gem 'image_optim_pack', platforms: :ruby
   gem 'image_optim'
   gem 'rack-ssl-enforcer'
-  gem 'rack'
+  gem 'rack', '>= 2.2.20'
   gem 'rss'
   gem 'sass'
-  gem 'sinatra-contrib'
-  gem 'sinatra'
+  gem 'sinatra-contrib', '>= 4.0.0'
+  gem 'sinatra', '>= 4.0.0'
   gem 'sprockets-helpers'
   gem 'sprockets-sass'
-  gem 'sprockets'
-  gem 'thin'
+  gem 'sprockets', '>= 4.0.0'
+  gem 'thin', '>= 2.0.0'
 end
 
 group :production do
