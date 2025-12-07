@@ -46,7 +46,9 @@ docker run --name devdocs -d -p 9292:9292 devdocs
 
 DevDocs is made of two pieces: a Ruby scraper that generates the documentation and metadata, and a JavaScript app powered by a small Sinatra app.
 
-DevDocs requires Ruby 3.4.1 (defined in [`Gemfile`](./Gemfile)), libcurl, and a JavaScript runtime supported by [ExecJS](https://github.com/rails/execjs#readme) (included in OS X and Windows; [Node.js](https://nodejs.org/en/) on Linux). Once you have these installed, run the following commands:
+DevDocs requires Ruby 3.4.1 (defined in [`Gemfile`](./Gemfile)), libcurl, and a JavaScript runtime supported by [ExecJS](https://github.com/rails/execjs#readme) (included in OS X and Windows; [Node.js](https://nodejs.org/en/) on Linux). On Arch Linux run `pacman -S ruby ruby-bundler ruby-erb ruby-irb`.
+
+Once you have these installed, run the following commands:
 
 ```sh
 git clone https://github.com/freeCodeCamp/devdocs.git && cd devdocs
@@ -162,6 +164,24 @@ Contributions are welcome. Please read the [contributing guidelines](./.github/C
 * [Scraper Reference](./docs/scraper-reference.md)
 * [Filter Reference](./docs/filter-reference.md)
 * [Maintainers’ Guide](./docs/maintainers.md)
+
+## DevDocs Quick Usage Cheatsheet
+
+Below are some helpful shortcuts and usage tips that are not immediately obvious to new users:
+
+- Press <kbd>/</kbd> or <kbd>Ctrl + K</kbd> to instantly focus the search bar.
+- Press <kbd>?</kbd> to open DevDocs’ built-in help overlay.
+- Press <kbd>↑</kbd> or <kbd>↓</kbd> to navigate search results without touching the mouse.
+- Press <kbd>Enter</kbd> to open the highlighted search result.
+- Press <kbd>Backspace</kbd> to go back to the previously viewed page.
+- Press <kbd>Shift + S</kbd> to toggle the sidebar visibility.
+- Press <kbd>A</kbd> to open the list of all installed documentation sets.
+- Press <kbd>Esc</kbd> to close popups, overlays, and search.
+- Use the **⚡ Offline Mode toggle** to download docs for offline use.
+- You can pin specific documentation sets to the sidebar for quicker access.
+
+These shortcuts make DevDocs faster to navigate and more efficient for daily use.
+
 
 ## Related Projects
 
